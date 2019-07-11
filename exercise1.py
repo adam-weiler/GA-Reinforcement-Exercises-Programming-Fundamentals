@@ -1,12 +1,12 @@
 #Exercise 1
 
-all_grades = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F']
+all_grades = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'] #List stores all letter grades.
 
-def display_grade(num_grade, position):
+def display_grade(num_grade, position): #Returns percent grade and letter grade.
     return (f'With a grade of {num_grade}, you get an {all_grades[position]}.')
 
 
-def get_letter_grade(num_grade):
+def get_letter_grade(num_grade): #Based on user input, calls display_grade with appropriate reference for the list.
     if (num_grade >= 97) and (num_grade <= 100):
         return display_grade(num_grade, 0)
     elif (num_grade >= 93) and (num_grade < 97):
@@ -34,49 +34,13 @@ def get_letter_grade(num_grade):
     elif (num_grade >= 0) and (num_grade < 60):
         return display_grade(num_grade, 12)
     else:
-        return ('That is an invalid selection')
+        return ('That is an invalid selection.')
 
-def ask_for_grade():
-    while(True):
-        print('What is your grade percentage?')
-        grade_percentage = input()
+def ask_for_grade(): #Asks user for their grade as a percentage.
+    print('What is your grade percentage?')
+    grade_percentage = float(input())
 
-        if (grade_percentage.isnumeric() == True):
-            break
-        print('That is an invalid percent.')
-    return(get_letter_grade(int(grade_percentage)))
+    return get_letter_grade(grade_percentage)
 
 
-ask_for_grade()
-
-
-# print(get_letter_grade(100))
-# print(get_letter_grade(97))
-# print(get_letter_grade(96.9))
-# print(get_letter_grade(93))
-# print(get_letter_grade(92.9))
-# print(get_letter_grade(90))
-# print(get_letter_grade(89.9))
-# print(get_letter_grade(87))
-# print(get_letter_grade(86.9))
-# print(get_letter_grade(83))
-# print(get_letter_grade(82.9))
-# print(get_letter_grade(80))
-# print(get_letter_grade(79.9))
-# print(get_letter_grade(77))
-# print(get_letter_grade(76.9))
-# print(get_letter_grade(73))
-# print(get_letter_grade(72.9))
-# print(get_letter_grade(70))
-# print(get_letter_grade(69.9))
-# print(get_letter_grade(67))
-# print(get_letter_grade(66.9))
-# print(get_letter_grade(63))
-# print(get_letter_grade(62.9))
-# print(get_letter_grade(60))
-# print(get_letter_grade(59.9))
-# print(get_letter_grade(59))
-# print(get_letter_grade(58.9))
-# print(get_letter_grade(0))
-# print(get_letter_grade(-27))
-# print(get_letter_grade('A string'))
+print(ask_for_grade())
